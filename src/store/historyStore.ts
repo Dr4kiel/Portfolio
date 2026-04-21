@@ -34,7 +34,9 @@ export const useHistoryStore = create<HistoryState & HistoryActions>()(
             entries: [
               ...state.entries,
               {
-                id: crypto.randomUUID(),
+                id: typeof crypto.randomUUID === 'function'
+                  ? crypto.randomUUID()
+                  : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`,
                 command,
                 output,
                 timestamp: Date.now(),
