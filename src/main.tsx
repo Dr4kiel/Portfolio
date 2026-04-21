@@ -34,7 +34,7 @@ async function bootstrap() {
   |_|\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|
 </pre>`),
     text(''),
-    text("Welcome. I'm Tristan — a frontend engineer.", undefined, true),
+    text("Bienvenue, Je suis Tristan GAUTIER, Développeur Full-Stack.", undefined, true),
     dim("Type 'help' to see available commands. Type 'about' to learn more."),
     text(''),
   ]
