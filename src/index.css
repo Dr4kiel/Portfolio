@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Core palette */
+    --terminal-primary: #a78bfa;
+    --terminal-primary-rgb: 167, 139, 250;
+    --terminal-dim: #52525b;
+    --terminal-muted: #3f3f46;
+    --terminal-bg: #07070a;
+    --terminal-surface: #0e0e12;
+    --terminal-surface-2: #141418;
+    --terminal-border: rgba(255, 255, 255, 0.06);
+    --terminal-border-strong: rgba(255, 255, 255, 0.10);
+    --terminal-text: #e4e4e7;
+    --terminal-text-2: #a1a1aa;
+    --terminal-error: #f87171;
+    --terminal-error-rgb: 248, 113, 113;
+    --terminal-warning: #fb923c;
+    --terminal-success: #4ade80;
+
+    /* Glow / shadow */
+    --terminal-glow: rgba(167, 139, 250, 0.12);
+    --terminal-window-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 8px 32px rgba(0, 0, 0, 0.7),
+      0 32px 80px rgba(0, 0, 0, 0.5),
+      0 0 80px rgba(167, 139, 250, 0.04);
+  }
+}
+
+/* ─── Cursor blink ─────────────────────────────── */
+@keyframes terminal-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+/* ─── Fade-in for new blocks ───────────────────── */
+@keyframes block-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.block-in {
+  animation: block-in 0.18s ease-out both;
+}
+
+/* ─── Subtle card hover glow ───────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px var(--terminal-border), 0 2px 12px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 0 1px var(--terminal-border-strong), 0 4px 20px rgba(var(--terminal-primary-rgb), 0.08); }
+}
+
+/* ─── Base ─────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background radial vignette */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(167,139,250,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(99,102,241,0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-muted);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-dim);
+}
+
+/* ─── Selection ────────────────────────────────── */
+::selection {
+  background: rgba(var(--terminal-primary-rgb), 0.25);
+  color: inherit;
+}
