@@ -1,16 +1,17 @@
 export const aboutData = {
   name: 'Tristan Gautier',
-  role: 'Frontend Engineer & Software Architect',
+  role: 'Alternant en Informatique Industrielle - Andros | Etudiant en Informatique - Ecole SupDeVinci Rennes',
   location: 'France',
-  bio: 'I build scalable frontend systems, developer tooling, and extensible architectures. Passionate about clean code, DX, and pushing the boundaries of what a web UI can be.',
+  bio: 'Je suis un développeur passionné avec une expérience dans le secteur industriel, spécialisé dans la création d\'outils de développement. J\'aime résoudre des problèmes complexes et créer des solutions élégantes qui améliorent l\'expérience des développeurs.',
   skills: [
-    'TypeScript', 'React', 'Vue', 'Node.js',
-    'Vite', 'TailwindCSS', 'Zustand',
+    'TypeScript', 'React', 'Node.js',
+    'Vite', 'TailwindCSS', 'Docker',
     'System Design', 'CLI Tooling', 'DX Engineering',
+    'C++', 'Python', 'Java',
   ],
   social: [
-    { label: 'GitHub', href: 'https://github.com/tristangautier' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/tristangautier' },
-    { label: 'Email', href: 'mailto:tristangautier2003@gmail.com' },
+    { label: 'GitHub', href: 'https://github.com/Dr4kiel' },
+    { label: 'LinkedIn', href: 'https://fr.linkedin.com/in/tristan-g-4719a8234' },
+    { label: 'Email', href: 'mailto:tristan.gautierpro@gmail.com' },
   ],
 }
